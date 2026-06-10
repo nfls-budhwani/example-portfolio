@@ -3,54 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portfolio – AS Level (Grade 11)</title>
+    <title>Lina Zhao – AS Level Portfolio</title>
+
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
-            background: #f5f5f5;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f4f6f9;
             color: #333;
         }
+
         header {
-            background: #1a73e8;
+            background: linear-gradient(135deg, #1a73e8, #4a90e2);
             color: white;
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
         }
+
+        header h1 {
+            margin: 0;
+            font-size: 42px;
+            font-weight: 700;
+        }
+
         nav {
             background: white;
-            padding: 10px 20px;
+            padding: 12px 20px;
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             border-bottom: 1px solid #ddd;
         }
+
         nav a {
             text-decoration: none;
             color: #1a73e8;
-            font-weight: bold;
+            font-weight: 600;
         }
+
         section {
             max-width: 900px;
             margin: 40px auto;
             background: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
+
         h2 {
             color: #1a73e8;
+            margin-top: 0;
         }
-        .project {
+
+        .project, .achievement {
             border-left: 4px solid #1a73e8;
             padding-left: 15px;
             margin-bottom: 20px;
         }
+
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 25px;
             margin-top: 40px;
-            background: #eee;
+            background: #e9eef5;
+            color: #555;
         }
     </style>
 </head>
@@ -58,4 +74,125 @@
 <body>
 
 <header>
-    <h1>Student Portfolio</h1>
+    <h1>Lina Zhao</h1>
+    <p>AS Level Student • Nanjing Foreign Language School (NFLS)</p>
+</header>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#academics">Academics</a>
+    <a href="#activities">Activities</a>
+    <a href="#projects">Projects</a>
+    <a href="#awards">Awards</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+    <h2>About Me</h2>
+    <p>
+        My name is <strong>Lina Zhao</strong>, a Grade 11 AS Level student at 
+        <strong>Nanjing Foreign Language School (NFLS)</strong>. 
+        I am passionate about STEM—particularly robotics, physics, and computational problem‑solving.
+        I hope to pursue engineering or computer science at university.
+    </p>
+</section>
+
+<section id="academics">
+    <h2>Academic Profile</h2>
+
+    <h3>IGCSE Results</h3>
+    <ul>
+        <li>Mathematics — A*</li>
+        <li>Physics — A*</li>
+        <li>Chemistry — A*</li>
+        <li>Biology — A</li>
+        <li>English as a Second Language — A*</li>
+        <li>Chinese First Language — A*</li>
+        <li>Computer Science — A</li>
+        <li>Geography — A</li>
+    </ul>
+
+    <h3>AS Subjects</h3>
+    <ul>
+        <li>Mathematics</li>
+        <li>Physics</li>
+        <li>Chemistry</li>
+        <li>English Language</li>
+        <li>Computer Science</li>
+    </ul>
+</section>
+
+<section id="activities">
+    <h2>Extracurricular Activities</h2>
+    <ul>
+        <li>Robotics Club — Team Programmer & Competition Member</li>
+        <li>Model United Nations — NFLSMUN Delegate</li>
+        <li>NFLS STEM Society — Vice President</li>
+        <li>School Orchestra — Violin, 2nd Chair</li>
+        <li>Community Tutoring Program — Math & Physics Tutor</li>
+    </ul>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+        <h3>Autonomous Line‑Following Robot</h3>
+        <p>
+            Designed and programmed a line‑tracking robot using infrared sensors and PID control.
+            Competed in the Jiangsu Provincial Robotics Challenge.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>Physics Research: Motion of Coupled Oscillators</h3>
+        <p>
+            Conducted an independent investigation analyzing resonance patterns and energy transfer
+            in coupled spring systems.
+        </p>
+    </div>
+
+    <div class="project">
+        <h3>Python Data Visualizer</h3>
+        <p>
+            Built a Python tool that converts CSV datasets into interactive graphs using Matplotlib
+            and Tkinter.
+        </p>
+    </div>
+</section>
+
+<section id="awards">
+    <h2>Awards & Achievements</h2>
+
+    <div class="achievement">
+        <h3>First Prize — Jiangsu Provincial Robotics Challenge</h3>
+        <p>Recognized for robot design and programming excellence.</p>
+    </div>
+
+    <div class="achievement">
+        <h3>Distinction — UKMT Senior Maths Challenge</h3>
+        <p>Top performance among international competitors.</p>
+    </div>
+
+    <div class="achievement">
+        <h3>Outstanding Delegate — NFLSMUN 2025</h3>
+        <p>Awarded for diplomacy, research depth, and public speaking.</p>
+    </div>
+
+    <div class="achievement">
+        <h3>NFLS Academic Excellence Award</h3>
+        <p>Top 5% of academic performance in the grade.</p>
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <strong>lina.zhao@example.com</strong></p>
+</section>
+
+<footer>
+    <p>© 2026 Lina Zhao — NFLS AS Level Portfolio</p>
+</footer>
+
+</body>
+</html>
