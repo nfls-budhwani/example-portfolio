@@ -1,198 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lina Zhao – AS Level Portfolio</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lina Zhao — AS Level Portfolio</title>
+  <meta name="description" content="Lina Zhao — AS Level student at NFLS. Robotics, STEM, IGCSE A* results, projects and awards." />
 
-    <style>
-        body {
-            margin: 0;
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: #f4f6f9;
-            color: #333;
-        }
+  <style>
+    :root{
+      --bg:#0f1724;
+      --card:#0b1220;
+      --muted:#9aa7bf;
+      --accent:#6ee7b7;
+      --accent-2:#60a5fa;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --maxw:1100px;
+      --ff-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--ff-sans);
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(96,165,250,0.06), transparent 10%),
+        radial-gradient(900px 500px at 90% 90%, rgba(110,231,183,0.04), transparent 10%),
+        var(--bg);
+      color:#e6eef8;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:40px 20px;
+      display:flex;
+      justify-content:center;
+    }
 
-        header {
-            background: linear-gradient(135deg, #1a73e8, #4a90e2);
-            color: white;
-            padding: 60px 20px;
-            text-align: center;
-        }
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap:28px;
+      align-items:start;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: 42px;
-            font-weight: 700;
-        }
+    /* Sidebar */
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:24px;
+      box-shadow: 0 6px 30px rgba(2,6,23,0.6);
+      backdrop-filter: blur(6px);
+    }
 
-        nav {
-            background: white;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            border-bottom: 1px solid #ddd;
-        }
+    .profile {
+      text-align:center;
+    }
+    .avatar{
+      width:120px;height:120px;border-radius:20px;
+      margin:0 auto 14px;
+      background:linear-gradient(135deg,var(--accent-2),var(--accent));
+      display:grid;place-items:center;font-weight:700;color:#04263b;
+      box-shadow: 0 6px 18px rgba(6,12,30,0.6);
+      transform: translateZ(0);
+    }
+    h1{font-size:20px;margin:6px 0 2px}
+    .muted{color:var(--muted);font-size:13px}
 
-        nav a {
-            text-decoration: none;
-            color: #1a73e8;
-            font-weight: 600;
-        }
+    .meta{margin-top:18px;font-size:14px}
+    .pill{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;margin:6px 6px 0;color:var(--muted);font-weight:600;font-size:13px}
 
-        section {
-            max-width: 900px;
-            margin: 40px auto;
-            background: white;
-            padding: 35px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
+    /* Main content */
+    main{display:flex;flex-direction:column;gap:22px}
+    .hero{
+      background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:26px;border-radius:var(--radius);
+      display:flex;align-items:center;gap:20px;
+    }
+    .hero .intro{flex:1}
+    .hero h2{margin:0 0 6px;font-size:22px;color:#fff}
+    .hero p{margin:0;color:var(--muted)}
 
-        h2 {
-            color: #1a73e8;
-            margin-top: 0;
-        }
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:18px;
+    }
 
-        .project, .achievement {
-            border-left: 4px solid #1a73e8;
-            padding-left: 15px;
-            margin-bottom: 20px;
-        }
+    .project{
+      background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));
+      padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);
+      transition: transform .28s cubic-bezier(.2,.9,.2,1), box-shadow .28s;
+    }
+    .project:hover{transform: translateY(-6px); box-shadow: 0 18px 40px rgba(2,6,23,0.6)}
+    .project h3{margin:0 0 8px;font-size:16px;color:#fff}
+    .project p{margin:0;color:var(--muted);font-size:14px}
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            margin-top: 40px;
-            background: #e9eef5;
-            color: #555;
-        }
-    </style>
+    .list{display:flex;flex-direction:column;gap:10px}
+    .badge{display:inline-block;background:rgba(255,255,255,0.03);padding:6px 10px;border-radius:8px;color:var(--muted);font-weight:600;font-size:13px}
+
+    footer{margin-top:8px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .wrap{grid-template-columns:1fr; padding-bottom:40px}
+      .grid{grid-template-columns:1fr}
+    }
+  </style>
 </head>
-
 <body>
+  <div class="wrap">
+    <aside class="card">
+      <div class="profile">
+        <div class="avatar">LZ</div>
+        <h1>Lina Zhao</h1>
+        <div class="muted">AS Level • Nanjing Foreign Language School</div>
+      </div>
 
-<header>
-    <h1>Lina Zhao</h1>
-    <p>AS Level Student • Nanjing Foreign Language School (NFLS)</p>
-</header>
+      <div class="meta">
+        <div style="margin-top:14px">
+          <div class="pill">IGCSE: 6 × A*, 2 × A</div>
+        </div>
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#academics">Academics</a>
-    <a href="#activities">Activities</a>
-    <a href="#projects">Projects</a>
-    <a href="#awards">Awards</a>
-    <a href="#contact">Contact</a>
-</nav>
+        <div style="margin-top:14px">
+          <strong class="muted">AS Subjects</strong>
+          <div class="list" style="margin-top:8px">
+            <span class="badge">Mathematics</span>
+            <span class="badge">Physics</span>
+            <span class="badge">Computer Science</span>
+          </div>
+        </div>
 
-<section id="about">
-    <h2>About Me</h2>
-    <p>
-        My name is <strong>Lina Zhao</strong>, a Grade 11 AS Level student at 
-        <strong>Nanjing Foreign Language School (NFLS)</strong>. 
-        I am passionate about STEM—particularly robotics, physics, and computational problem‑solving.
-        I hope to pursue engineering or computer science at university.
-    </p>
-</section>
+        <div style="margin-top:14px">
+          <strong class="muted">Clubs</strong>
+          <div class="list" style="margin-top:8px">
+            <span class="badge">Robotics Club — Programmer</span>
+            <span class="badge">NFLS STEM Society — VP</span>
+            <span class="badge">MUN — Outstanding Delegate</span>
+          </div>
+        </div>
+      </div>
+    </aside>
 
-<section id="academics">
-    <h2>Academic Profile</h2>
+    <main>
+      <section class="hero card">
+        <div class="intro">
+          <h2>Engineering • Robotics • Data</h2>
+          <p>I build autonomous robots, explore computational physics, and create data tools in Python. I’m applying to study Engineering / Computer Science.</p>
+        </div>
+        <div style="min-width:160px;text-align:right">
+          <div class="pill">First Prize — Jiangsu Robotics</div>
+          <div style="height:8px"></div>
+          <div class="pill">UKMT Distinction</div>
+        </div>
+      </section>
 
-    <h3>IGCSE Results</h3>
-    <ul>
-        <li>Mathematics — A*</li>
-        <li>Physics — A*</li>
-        <li>Chemistry — A*</li>
-        <li>Biology — A</li>
-        <li>English as a Second Language — A*</li>
-        <li>Chinese First Language — A*</li>
-        <li>Computer Science — A</li>
-        <li>Geography — A</li>
-    </ul>
+      <section class="card">
+        <h3 style="margin-top:0">Selected Projects</h3>
+        <div class="grid" style="margin-top:12px">
+          <article class="project">
+            <h3>Autonomous Line‑Following Robot</h3>
+            <p>PID control, sensor fusion, and competition-ready chassis; placed 1st at provincial level.</p>
+          </article>
 
-    <h3>AS Subjects</h3>
-    <ul>
-        <li>Mathematics</li>
-        <li>Physics</li>
-        <li>Chemistry</li>
-        <li>English Language</li>
-        <li>Computer Science</li>
-    </ul>
-</section>
+          <article class="project">
+            <h3>Python Data Visualizer</h3>
+            <p>CSV → interactive charts using Matplotlib and a lightweight GUI for classroom use.</p>
+          </article>
 
-<section id="activities">
-    <h2>Extracurricular Activities</h2>
-    <ul>
-        <li>Robotics Club — Team Programmer & Competition Member</li>
-        <li>Model United Nations — NFLSMUN Delegate</li>
-        <li>NFLS STEM Society — Vice President</li>
-        <li>School Orchestra — Violin, 2nd Chair</li>
-        <li>Community Tutoring Program — Math & Physics Tutor</li>
-    </ul>
-</section>
+          <article class="project">
+            <h3>Coupled Oscillators Study</h3>
+            <p>Independent physics research analyzing resonance and energy transfer in spring systems.</p>
+          </article>
 
-<section id="projects">
-    <h2>Projects</h2>
+          <article class="project">
+            <h3>Community Tutoring Program</h3>
+            <p>Organized weekly math & physics sessions for middle‑school students (50+ hours).</p>
+          </article>
+        </div>
+      </section>
 
-    <div class="project">
-        <h3>Autonomous Line‑Following Robot</h3>
-        <p>
-            Designed and programmed a line‑tracking robot using infrared sensors and PID control.
-            Competed in the Jiangsu Provincial Robotics Challenge.
-        </p>
-    </div>
+      <section class="card">
+        <h3 style="margin-top:0">Contact</h3>
+        <p class="muted">Email: <strong style="color:#fff">lina.zhao@example.com</strong></p>
+      </section>
 
-    <div class="project">
-        <h3>Physics Research: Motion of Coupled Oscillators</h3>
-        <p>
-            Conducted an independent investigation analyzing resonance patterns and energy transfer
-            in coupled spring systems.
-        </p>
-    </div>
-
-    <div class="project">
-        <h3>Python Data Visualizer</h3>
-        <p>
-            Built a Python tool that converts CSV datasets into interactive graphs using Matplotlib
-            and Tkinter.
-        </p>
-    </div>
-</section>
-
-<section id="awards">
-    <h2>Awards & Achievements</h2>
-
-    <div class="achievement">
-        <h3>First Prize — Jiangsu Provincial Robotics Challenge</h3>
-        <p>Recognized for robot design and programming excellence.</p>
-    </div>
-
-    <div class="achievement">
-        <h3>Distinction — UKMT Senior Maths Challenge</h3>
-        <p>Top performance among international competitors.</p>
-    </div>
-
-    <div class="achievement">
-        <h3>Outstanding Delegate — NFLSMUN 2025</h3>
-        <p>Awarded for diplomacy, research depth, and public speaking.</p>
-    </div>
-
-    <div class="achievement">
-        <h3>NFLS Academic Excellence Award</h3>
-        <p>Top 5% of academic performance in the grade.</p>
-    </div>
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: <strong>lina.zhao@example.com</strong></p>
-</section>
-
-<footer>
-    <p>© 2026 Lina Zhao — NFLS AS Level Portfolio</p>
-</footer>
-
+      <footer>© 2026 Lina Zhao — NFLS AS Level Portfolio</footer>
+    </main>
+  </div>
 </body>
 </html>
